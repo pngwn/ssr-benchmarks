@@ -13,13 +13,13 @@ const SvelteApp = require("./src/svelte");
 perform("react", ReactApp);
 perform("preact", PreactApp);
 perform("preact-compat", PreactCompatApp);
-perform("inferno", InfernoApp);
+// perform("inferno", InfernoApp);
 perform("inferno-compat", InfernoCompatApp);
 perform("svelte", SvelteApp);
 
 report("react");
 report("preact");
 report("preact-compat");
-report("inferno");
+// report("inferno");
 report("inferno-compat");
 report("svelte", true);
