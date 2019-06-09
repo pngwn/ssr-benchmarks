@@ -1,9 +1,7 @@
-import { createElement, Component } from 'react';
-import { renderToString } from 'react-dom/server';
-import Skeleton from './skeleton';
+import { createElement } from "react";
+import { renderToString } from "react-dom/server";
+import Skeleton from "./skeleton";
 
-const App = Skeleton(createElement, Component);
+const App = Skeleton(createElement);
 
-module.exports = () => renderToString(
-  createElement(App)
-);
+module.exports = () => renderToString(createElement(App));
