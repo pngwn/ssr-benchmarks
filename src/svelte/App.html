@@ -1,17 +1,17 @@
 <div class="app">
-  {{#each items as item, i}}
+  {#each items as item, i}
     <ItemSectionGroupWrapper>
       <ItemSectionGroup>
-        <ItemSection id="{{i}}">
-          {{#if i % 2 === 0}}
-            <Item img="{{item.img}}" title="{{item.title}}" content="{{item.content}}" />
-          {{else}}
-            <RichItem img="{{item.img}}" title="{{item.title}}" content="{{item.content}}" />
-          {{/if}}
+        <ItemSection id="{i}">
+          {#if i % 2 === 0}
+            <Item img="{item.img}" title="{item.title}" content="{item.content}" />
+          {:else}
+            <RichItem img="{item.img}" title="{item.title}" content="{item.content}" />
+          {/if}
         </ItemSection>
       </ItemSectionGroup>
     </ItemSectionGroupWrapper>
-  {{/each}}
+  {/each}
 </div>
 
 <script>
@@ -21,18 +21,5 @@
   import Item from './Item.html';
   import RichItem from './RichItem.html';
 
-  export default {
-    data() {
-      return {
-        items: [],
-      };
-    },
-    components: {
-      ItemSectionGroupWrapper,
-      ItemSectionGroup,
-      ItemSection,
-      Item,
-      RichItem,
-    },
-  }
+  export let items;
 </script>

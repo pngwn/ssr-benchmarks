@@ -1,5 +1,5 @@
-const Skeleton = require('./skeleton-svelte');
+const Skeleton = require("./skeleton-svelte");
 
 const App = Skeleton();
 
-module.exports = () => App.component.render(App.data);
+module.exports = () => App.component.render(App.props);

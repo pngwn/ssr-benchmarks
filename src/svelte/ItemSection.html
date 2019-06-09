@@ -1,30 +1,23 @@
 <div>
-  {{#if showEven}}
+  {#if showEven}
   <h2>This item section is even</h2>
-  {{/if}}
+  {/if}
   <div id="item-section{{id}}" style="font-weight: 300; margin: 10px 20px;">
-    {{yield}}
+    <slot></slot>
   </div>
   <ItemSectionDescription />
 </div>
 
 <script>
+  import { onMount } from 'svelte';
   import ItemSectionDescription from './ItemSectionDescription.html';
 
-  export default {
-    data() {
-      return {
-        id: -1,
-        even: false,
-      };
-    },
-    onrender() {
-      const even = this.get('id') % 2 === 0;
-
-      this.set({ even, showEven: even });
-    },
-    components: {
-      ItemSectionDescription,
-    }
-  };
+  export let id = -1,
+  even = false,
+  showEven;
+     
+  onMount(() => {
+    even = id % 2 === 0;
+    showEven = even;
+  });
 </script>

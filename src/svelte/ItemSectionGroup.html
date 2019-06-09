@@ -1,14 +1,9 @@
-<div class="really-long-and-stupid-class-name">{{yield}}</div>
+<div class="really-long-and-stupid-class-name"><slot></slot></div>
 
 <script>
-  export default {
-    data() {
-      return {
-        aboutToMount: false,
-      };
-    },
-    onrender() {
-      this.set({ aboutToMount: true });
-    },
-  }
+  import { onMount } from "svelte";
+
+  let aboutToMount = false;
+
+  onMount(() => (aboutToMount = true));
 </script>
